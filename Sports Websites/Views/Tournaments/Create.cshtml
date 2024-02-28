@@ -1,0 +1,38 @@
+﻿@using Sports_Websites.Models
+@model Tournament 
+
+<h1>Create Tournament</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" value="@Model?.Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description" class="form-control" value="@Model?.Description"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Logo">Logo:</label>
+        <textarea asp-for="Logo" class="form-control" value="@Model?.Logo"></textarea>
+        <span asp-validation-for="Logo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VideoURL">VideoUrl:</label>
+        <textarea asp-for="VideoURL" class="form-control" value="@Model?.VideoURL"></textarea>
+        <span asp-validation-for="VideoURL" class="text-danger"></span>
+    </div>
+    @if (Model == null)
+    {
+        <button type="submit" class="btn btn-primary">Create</button>
+    }
+    else
+    {
+        <button type="submit" class="btn btn-primary">Edit</button>
+    }
+</form>
+
+
+

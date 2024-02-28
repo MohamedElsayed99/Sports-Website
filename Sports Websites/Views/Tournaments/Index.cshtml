@@ -1,0 +1,35 @@
+﻿ @model List<Tournament>
+ 
+<h1>Tournaments</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Logo</th>
+                <th>Video Url</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tournament in Model)
+            {
+                <tr>
+                    <td>@tournament.Name</td>
+                    <td>@tournament.Description</td>
+                    <td>@tournament.Logo</td>
+                    <td>@tournament.VideoURL</td>
+                    <td>
+                        <a class="btn btn-primary mr-2" asp-action="Edit" asp-route-id="@tournament.TournamentID">Edit</a> 
+                        <a class="btn btn-dark" asp-action="Delete" asp-route-id="@tournament.TournamentID">Delete</a>
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@tournament.TournamentID">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+<a class="btn btn-primary" asp-action="Create">Create New Tournament</a>
+
+
